@@ -4,16 +4,20 @@ from tournament import Tournament
 from abc import abstractproperty
 
 
-cantidad_participantes = int(input("Ingresa la cantidad de participantes\n"))
+#cantidad_participantes = int(input("Ingresa la cantidad de participantes\n"))
 
 # Creamos una lista para guardar a los participantes.
 participantes = []
 
-# Le pedimos al usuario que ingrese los nombres de cada participante.
-for i in range(cantidad_participantes):
-    nuevo_participante = input(f"Ingrese al participante número {i+1}\n")
-    participantes.append(nuevo_participante)
-    print("\n")
+# Tomamos a los participantes de un archivo .txt
+with open("contestants.txt", "r") as participantes_file:
+    contenido = participantes_file.readlines()
+    cantidad_participantes = int(contenido[0])
+    
+    for i in range(0, cantidad_participantes):
+        nuevo_participante = contenido[i]
+        participantes.append(nuevo_participante)
+        print("\n")
 
 # Creamos el torneo con los participantes.
 torneo = Tournament(participantes, cantidad_participantes)

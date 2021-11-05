@@ -88,4 +88,4 @@ class Tournament:
         print("------------------")
         # Recorremos el diccionario de puntos por participante.
         for participante, puntos in self.points.items():
-            print ("{:<20} {:<5}".format(participante, puntos))
+            print ("{:<40} {:<5}".format(participante, puntos))
