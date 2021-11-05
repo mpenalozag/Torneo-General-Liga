@@ -21,8 +21,9 @@ class Tournament:
     # Función que setea la tabla de posiciones.
     def setLeaderboard(self):
         # A cada participante le asignamos un espacio en el diccionario.
-        # El value asignado a cada participante corresponde a los 
+        # El value asignado a cada participante corresponde a los puntos.
         for participante in self.participantes:
+            pass
 
 
     # Función que enfreta a 2 competidores y permite seleccionar quien gana
