@@ -14,8 +14,8 @@ with open("contestants.txt", "r") as participantes_file:
     contenido = participantes_file.readlines()
     cantidad_participantes = int(contenido[0])
     
-    for i in range(0, cantidad_participantes):
-        nuevo_participante = contenido[i]
+    for i in range(cantidad_participantes):
+        nuevo_participante = contenido[i+1]
         participantes.append(nuevo_participante)
         print("\n")
 
