@@ -1,5 +1,7 @@
 from mathFunctions import closestPower
 import random
+from colorama import Fore, Style, Back
+
 
 class Tournament:
     # Recibe como input una lista con los participantes del torneo y un int con la cantidad de participantes.
@@ -27,9 +29,13 @@ class Tournament:
     # Función que describe el torneo.
     def describeTournament(self):
         print("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *")
+        print(Fore.LIGHTMAGENTA_EX)
         print(f"Torneo con {self.cantidad_participantes} participantes!")
+        print(Style.RESET_ALL)
         print("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
+        print(Fore.LIGHTYELLOW_EX)
         print(" Participantes ")
+        print(Style.RESET_ALL)
         print("---------------")
         for i in range(self.cantidad_participantes):
             print(f"{i+1}) {self.participantes[i]}")
@@ -60,6 +66,9 @@ class Tournament:
 
     # Función que realiza todos los enfrentamientos del campeonato.
     def allMatchUps(self):
+        print(Fore.CYAN)
+        print("\x1B[3mC O M I E N Z A N   L O S   M A T C H   U P S\x1B[23m\n\n")
+        print(Style.RESET_ALL)
         # Definimos una lista de participantes que ya compitieron contra todos.
         players_ready = []
         # Recorremos todos los participantes.
@@ -73,7 +82,9 @@ class Tournament:
     
     # Función para imprimir la tabla de puntuación
     def printLeaderboard(self):
+        print(Fore.LIGHTBLUE_EX)
         print(" Tabla de la Liga ")
+        print(Style.RESET_ALL)
         print("------------------")
         # Recorremos el diccionario de puntos por participante.
         for participante, puntos in self.points.items():
